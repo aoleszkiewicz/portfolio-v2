@@ -1,0 +1,38 @@
+{
+  "kind": "singleType",
+  "collectionName": "heroes",
+  "info": {
+    "singularName": "hero",
+    "pluralName": "heroes",
+    "displayName": "Hero"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "video": {
+      "allowedTypes": [
+        "files",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "text": {
+      "type": "string"
+    },
+    "text_size": {
+      "type": "enumeration",
+      "enum": [
+        "xs",
+        "sm",
+        "base",
+        "lg",
+        "xl"
+      ],
+      "default": "sm",
+      "required": true
+    }
+  }
+}

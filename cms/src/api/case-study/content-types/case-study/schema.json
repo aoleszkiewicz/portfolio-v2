@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "case_studies",
+  "info": {
+    "singularName": "case-study",
+    "pluralName": "case-studies",
+    "displayName": "Case Study",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slug": {
+      "type": "uid",
+      "required": true,
+      "targetField": "title"
+    },
+    "project": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project",
+      "inversedBy": "case_study"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
