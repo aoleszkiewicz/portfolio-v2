@@ -8,7 +8,7 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import { useMobile } from '@/lib/hooks/use-mobile';
-import { Progress } from '@radix-ui/react-progress';
+import { Progress } from '@/components/ui/progress';
 import { useEffect, useState } from 'react';
 
 const ProjectsCarousel: React.FC<{ children?: React.ReactNode }> = ({

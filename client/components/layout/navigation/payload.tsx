@@ -6,12 +6,8 @@ const navigation: NavigationItem[] = [
     label: 'Projects',
   },
   {
-    href: '#experience',
-    label: 'Experience',
-  },
-  {
-    href: '#techstack',
-    label: 'Techstack',
+    href: '#services',
+    label: 'Services',
   },
   {
     href: '#contact',

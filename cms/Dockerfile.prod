@@ -1,0 +1,27 @@
+FROM node:18-alpine AS builder
+
+WORKDIR /opt/app
+
+# Install dependencies
+COPY package*.json ./
+RUN npm install
+
+# Copy project files and build
+COPY . .
+RUN npm run build
+
+# Production stage
+FROM node:18-alpine
+
+WORKDIR /opt/app
+
+ENV NODE_ENV production
+
+# Copy built assets from builder stage
+COPY --from=builder /opt/app/build ./build
+COPY --from=builder /opt/app/node_modules ./node_modules
+COPY --from=builder /opt/app/package.json ./package.json
+
+EXPOSE 1337
+
+CMD ["npm", "start"]

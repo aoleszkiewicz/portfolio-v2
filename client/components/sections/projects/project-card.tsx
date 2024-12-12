@@ -10,9 +10,9 @@ import Link from 'next/link';
 import Tag from '@/components/tag';
 import { ExternalLink } from 'lucide-react';
 import Image from 'next/image';
-import type { ProjectV2 } from '@/lib/types/project';
 import { getStrapiMedia } from '@/lib/utils/api/strapi-helpers';
 import { Skeleton } from '@/components/ui/skeleton';
+import { Project } from '@/lib/types/project';
 
 const ProjectCardSkeleton = () => {
   return (
@@ -38,7 +38,7 @@ const ProjectCardSkeleton = () => {
   );
 };
 
-type ProjectCardProps = Omit<ProjectV2, 'demoUrl' | 'repositoryUrl'>;
+type ProjectCardProps = Omit<Project, 'demoUrl' | 'repositoryUrl'>;
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   name,
@@ -61,7 +61,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           </div>
         </CardHeader>
         <CardContent className="flex-grow">
-          <Link href={caseStudy.slug}>
+          <Link href={caseStudy.slug || '#'}>
             <Image
               src={getStrapiMedia(cover.url)}
               alt={`Image representing ${name} project`}
@@ -73,7 +73,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </CardContent>
         <CardFooter>
           <Button className="w-full xl:w-auto" size="default" asChild>
-            <Link href={caseStudy.slug}>
+            <Link href={caseStudy.slug || '#'}>
               <ExternalLink />
               Read more
             </Link>

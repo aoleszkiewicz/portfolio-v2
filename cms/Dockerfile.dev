@@ -1,0 +1,14 @@
+FROM node:18-alpine
+
+WORKDIR /opt/app
+
+# Install dependencies
+COPY package*.json ./
+RUN npm install
+
+# Copy project files
+COPY . .
+
+# Expose port and start development server
+EXPOSE 1337
+CMD ["npm", "run", "develop"]

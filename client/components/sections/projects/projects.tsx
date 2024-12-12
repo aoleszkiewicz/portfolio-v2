@@ -6,7 +6,7 @@ import ProjectCard, { ProjectCardSkeleton } from './project-card';
 import { fetchData } from '@/lib/utils/api/fetch-data';
 import { Suspense } from 'react';
 import { Response } from '@/lib/types/api/strapi-types';
-import type { SnakeCasedProject } from '@/lib/types/project';
+import type { Project } from '@/lib/types/project';
 
 const ProjectCardsLoading = () => {
   return Array.from({ length: 3 }).map((_, index) => (
@@ -21,12 +21,9 @@ const ProjectCardsLoading = () => {
 
 const ProjectCards = async () => {
   try {
-    const projects = await fetchData<Response<SnakeCasedProject[]>>(
-      '/projects',
-      {
-        populate: '*',
-      },
-    );
+    const projects = await fetchData<Response<Project[]>>('/projects', {
+      populate: ['cover', 'case_study', 'tags'],
+    });
 
     return (
       <>
@@ -48,8 +45,8 @@ const ProjectCards = async () => {
       </>
     );
   } catch (error) {
-    console.error('Error fetching projects:', error);
-    return <div>Error loading projects</div>;
+    console.error('Error while fetching projects:', error);
+    return <div>Error while loading projects</div>;
   }
 };
 

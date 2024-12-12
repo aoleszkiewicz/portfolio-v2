@@ -2,7 +2,7 @@ import Section from '@/components/layout/section/section';
 import SectionCopy from '@/components/layout/section/section-copy';
 import ExperienceCard, { ExperienceCardSkeleton } from './experience-card';
 import { fetchData } from '@/lib/utils/api/fetch-data';
-import { SnakeCasedExperience } from '@/lib/types/experience';
+import type { Experience } from '@/lib/types/experience';
 import { Response } from '@/lib/types/api/strapi-types';
 import { Suspense } from 'react';
 
@@ -13,10 +13,9 @@ const ExperienceCardsLoading = () => {
 };
 
 const ExperienceCards = async () => {
-  const experiences = await fetchData<Response<SnakeCasedExperience[]>>(
-    '/experiences',
-    { populate: '*', sort: 'start_date:desc' },
-  );
+  const experiences = await fetchData<Response<Experience[]>>('/experiences', {
+    sort: 'start_date:desc',
+  });
 
   return (
     <>

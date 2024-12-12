@@ -1,9 +1,9 @@
-import { ProjectV2 } from './project';
+import { Project } from '@/lib/types/project';
 
 type CaseStudy = {
   slug: string;
   title: string;
-  project: ProjectV2;
+  project: Project;
 };
 
 type PopulatedCaseStudy = Omit<CaseStudy, 'project'>;

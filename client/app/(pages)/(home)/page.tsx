@@ -3,6 +3,8 @@ import Navigation from '@/components/layout/navigation/navigation';
 import Section from '@/components/layout/section/section';
 import Experience from '@/components/sections/experience/experience';
 import Projects from '@/components/sections/projects/projects';
+import Services from '@/components/sections/services/services';
+import Testimonials from '@/components/sections/testimonials/testimonials';
 
 export default function Home() {
   return (
@@ -15,7 +17,9 @@ export default function Home() {
       <Navigation />
       <Section setAsContainer disablePadding>
         <Projects />
+        <Services />
         <Experience />
+        <Testimonials />
       </Section>
     </>
   );

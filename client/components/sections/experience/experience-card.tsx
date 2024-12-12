@@ -47,7 +47,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
           <h3 className="text-lg font-thin uppercase text-slate-500 md:text-xl">
             <TextReveal>@{company}</TextReveal>
           </h3>
-          <span className="text-base font-medium">
+          <span className="text-base font-thin uppercase text-slate-500">
             <TextReveal>{duration}</TextReveal>
           </span>
         </div>
