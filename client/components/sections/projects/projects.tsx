@@ -5,7 +5,6 @@ import { CarouselItem } from '@/components/ui/carousel';
 import ProjectCard, { ProjectCardSkeleton } from './project-card';
 import { fetchData } from '@/lib/utils/api/fetch-data';
 import { Suspense } from 'react';
-import { Response } from '@/lib/types/api/strapi-types';
 import type { Project } from '@/lib/types/project';
 
 const ProjectCardsLoading = () => {
@@ -21,7 +20,7 @@ const ProjectCardsLoading = () => {
 
 const ProjectCards = async () => {
   try {
-    const projects = await fetchData<Response<Project[]>>('/projects', {
+    const projects = await fetchData<Project[]>('/projects', {
       populate: ['cover', 'case_study', 'tags'],
     });
 

@@ -1,11 +1,12 @@
 import qs from 'qs';
 import { getStrapiURL } from './strapi-helpers';
+import { Response } from '@/lib/types/api/strapi-types';
 
-async function fetchData<T>(
+async function fetchData<TData>(
   path: string,
   urlParamsObject = {},
   options = {},
-): Promise<T> {
+) {
   try {
     // Merge default and user options
     const mergedOptions = {
@@ -24,12 +25,10 @@ async function fetchData<T>(
     )}`;
 
     // Trigger API call
-    const response = await fetch(requestUrl, mergedOptions);
-    if (!response.ok) {
-      throw new Error(`Failed to fetch data from ${requestUrl}`);
-    }
+    const data: Response<TData> = await fetch(requestUrl, mergedOptions).then(
+      (response) => response.json(),
+    );
 
-    const data = await response.json();
     return data;
   } catch (error) {
     console.error(error);

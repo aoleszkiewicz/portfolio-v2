@@ -1,8 +1,6 @@
 import { CarouselItem } from '@/components/ui/carousel';
 import TestimonialCard from './testimonial-card';
-import Reveal from '@/components/motion/reveal';
 import { fetchData } from '@/lib/utils/api/fetch-data';
-import { Response } from '@/lib/types/api/strapi-types';
 import { Testimonial } from '@/lib/types/testimonial';
 import InfiniteCarousel from './infinite-carousel';
 import { Suspense } from 'react';
@@ -10,10 +8,9 @@ import Section from '@/components/layout/section/section';
 import SectionCopy from '@/components/layout/section/section-copy';
 
 const TestimonialCards: React.FC = async () => {
-  const testimonials = await fetchData<Response<Testimonial[]>>(
-    '/testimonials',
-    { populate: 'avatar' },
-  );
+  const testimonials = await fetchData<Testimonial[]>('/testimonials', {
+    populate: 'avatar',
+  });
 
   const firstRow = testimonials.data.slice(0, testimonials.data.length / 2);
   const secondRow = testimonials.data.slice(testimonials.data.length / 2);
