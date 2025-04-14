@@ -5,4 +5,13 @@ function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export { cn };
+function createVariantFactory<TVariant extends string>(
+  classes: Record<TVariant, string>,
+) {
+  return (type: TVariant, ...otherClasses: string[]) => {
+    const classList = [classes[type], ...otherClasses];
+    return classList.join(' ');
+  };
+}
+
+export { cn, createVariantFactory };

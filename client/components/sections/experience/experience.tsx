@@ -39,7 +39,7 @@ const Experience: React.FC = () => {
     <Section id="experience" className="flex flex-col">
       <SectionCopy
         label="Experience"
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        text="Discover the journey that shaped my career, from academic foundations to hands-on experience in real-world projects. My background reflects a blend of technical knowledge and practical application in fullstack development."
       />
 
       <div className="grid gap-y-4 py-6 md:py-12">

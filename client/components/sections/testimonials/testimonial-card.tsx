@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { cn } from '@/lib/utils/class-helpers';
 import { Testimonial } from '@/lib/types/testimonial';
 import { getStrapiMedia } from '@/lib/utils/api/strapi-helpers';
+import { rubik } from '@/lib/constants/fonts';
 
 type TestimonialCardProps = Testimonial & {
   className?: React.HTMLProps<HTMLElement>['className'];
@@ -34,9 +35,11 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
             width={80}
           />
         </div>
-        <div>
-          <p className="font-semibold xl:text-lg">{name}</p>
-          <p className="lg:text-md text-sm text-gray-500">{position}</p>
+        <div className={rubik.className}>
+          <p className="font-normal xl:text-lg">{name}</p>
+          <p className="lg:text-md text-sm font-thin uppercase text-gray-500">
+            {position}
+          </p>
         </div>
       </div>
       <CardContent className="p-4">

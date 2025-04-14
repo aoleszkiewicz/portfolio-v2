@@ -21,7 +21,7 @@ const TestimonialCards: React.FC = async () => {
         {firstRow.map(({ avatar, name, position, testimonial }, index) => (
           <CarouselItem
             key={`first_row_testimonial_${index}`}
-            className="md:basis-1/2 xl:basis-1/3 2xl:basis-1/4"
+            className="md:basis-1/2 xl:basis-1/3"
           >
             <div className="h-full p-1">
               <TestimonialCard
@@ -38,7 +38,7 @@ const TestimonialCards: React.FC = async () => {
         {secondRow.map(({ avatar, name, position, testimonial }, index) => (
           <CarouselItem
             key={`second_row_testimonial_${index}`}
-            className="md:basis-1/2 xl:basis-1/3 2xl:basis-1/4"
+            className="md:basis-1/2 xl:basis-1/3"
           >
             <div className="h-full p-1">
               <TestimonialCard
@@ -60,7 +60,7 @@ const Testimonials: React.FC = () => {
     <Section id="testimonials" className="grid gap-10">
       <SectionCopy
         label="Testimonials"
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        text="Read what clients and collaborators have to say about working with me. These stories reflect my dedication to clear communication, attention to detail, and delivering projects that exceed expectations."
       />
 
       <div className="relative flex flex-col items-center justify-center gap-4 overflow-hidden">

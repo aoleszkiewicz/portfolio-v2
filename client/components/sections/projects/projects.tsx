@@ -54,7 +54,7 @@ const Projects: React.FC = () => {
     <Section id="projects" className="flex flex-col">
       <SectionCopy
         label="Projects"
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        text="Explore a showcase of my work, highlighting diverse web applications and solutions I've built. Each project demonstrates my expertise in modern technologies, problem-solving skills, and a commitment to delivering high-quality results tailored to unique needs."
       />
 
       <ProjectsCarousel>
